@@ -16,6 +16,7 @@ const createImageInsideDOM = (url:string)=>{
 
 myRequest.then((response)=> response.json())
 .then(({data}:GipyRandomResponse)=>{
+    
     const imageUrl = data.images.original.url;
     createImageInsideDOM(imageUrl)
 
