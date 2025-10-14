@@ -1,4 +1,5 @@
 import { useState } from "react"
+import styles from './itemCounter.module.css'
 
 interface Props {
     name: string
@@ -21,9 +22,9 @@ export const ItemCounter = ({ name, quantity = 0 }: Props) => {
 
 
     return (
-        <section style={{ display: "flex", alignItems: "center", gap: 10 }}>
+        <section className={styles.itemRow} >
 
-            <span>{name}</span>
+            <span className={styles['item-text']} style={{ color: count === 1 ? 'red' : 'black' }}>{name}</span>
 
             <button onClick={() => handleAdd()}> +1 </button>
 
@@ -31,7 +32,7 @@ export const ItemCounter = ({ name, quantity = 0 }: Props) => {
 
             <button onClick={() => handleSubtract()}>  -1</button>
 
-        </section>
+        </section >
     )
 }
 

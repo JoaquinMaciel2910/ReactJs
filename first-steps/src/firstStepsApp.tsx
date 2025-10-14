@@ -15,7 +15,7 @@ const itemsInCart: ItemInCart[] = [
 export const FirstStepsApp = () => {
     return (
         <>
-            <h1>Cariito de compras</h1>
+            <h1>Carrito de compras</h1>
 
             {itemsInCart.map(({ productName, quantity }) => (
                 <ItemCounter key={productName} name={productName} quantity={quantity} />
