@@ -18,13 +18,13 @@ export const MyAwesomeApp = () => {
 
 
     return (
-        <>
-            <h1>{firstName}</h1>
+        <div>
+            <h1 data-testid='first-name-title'>{firstName}</h1>
             <h2>{lastName}</h2>
 
-            <p>{favoriteGames.join(", ")}</p>
+            <p className="mi-clase-favorita">{favoriteGames.join(", ")}</p>
 
             <h1>{isActive ? "Esta activo" : "Esta inactivo"}</h1>
-        </>
+        </div>
     )
 }
