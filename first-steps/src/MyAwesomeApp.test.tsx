@@ -13,10 +13,10 @@ describe('MyAwesomeApp', () => {
         const h1 = screen.getByRole('heading', { level: 1 })
 
     });
-
-    test('should match increase count when +1 button is pressed'), () => {
-        render(<ItemCounter name {'Test item'} quantity={1})
-        const buttons = screen.getAllByRole('button');
-        console.log(buttonAdd.innerHTML);
-    }
+    /* 
+        test('should match increase count when +1 button is pressed'), () => {
+            render(<ItemCounter name {'Test item'} quantity={1})
+            const buttons = screen.getAllByRole('button');
+            console.log(buttonAdd.innerHTML);
+        } */
 })
