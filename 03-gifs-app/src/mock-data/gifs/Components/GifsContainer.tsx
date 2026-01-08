@@ -1,4 +1,5 @@
-import { mockGifs, type Gif } from "../../gifs.mock"
+import type { Gif } from "../interfaces/gif.interface"
+
 
 
 interface Props {

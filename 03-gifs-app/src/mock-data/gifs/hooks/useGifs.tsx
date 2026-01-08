@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import { useRef } from 'react';
 import { useState } from "react";
 import type { Gif } from "../interfaces/gif.interface";
 import { getGifsByQuery } from "../actions/get-gifs-by-query.action";
