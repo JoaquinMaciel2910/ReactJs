@@ -60,6 +60,27 @@ export const ScrambleWords = () => {
         // Previene el refresh de la página
         e.preventDefault();
         // Implementar lógica de juego
+        const inputWord = guess
+
+
+        do {
+
+            if (points === 3) {
+                setIsGameOver(true)
+            }
+
+            if (inputWord === currentWord) {
+                console.log("ganaste")
+
+                setPoints(+1)
+            } else {
+                setPoints(-1)
+            }
+        } while (points != 3 && points != -3)
+
+
+
+
         console.log('Intento de adivinanza:', guess, currentWord);
 
     };
