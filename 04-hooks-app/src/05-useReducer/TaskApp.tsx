@@ -43,6 +43,7 @@ export const TasksApp = () => {
         dispatch({ type: 'DELETE_TODO', payload: id })
 
     };
+    
 
     const handleKeyPress = (e: React.KeyboardEvent) => {
         if (e.key === 'Enter') {

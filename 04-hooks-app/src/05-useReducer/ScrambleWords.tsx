@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
 import { SkipForward, Play } from 'lucide-react';
+import { preview } from 'vite';
 
 const GAME_WORDS = [
     'REACT',
@@ -63,24 +64,55 @@ export const ScrambleWords = () => {
         const inputWord = guess
 
 
-        do {
 
-            if (points === 3) {
-                setIsGameOver(true)
-            }
+        if (inputWord === currentWord) {
+            console.log("ganaste")
 
-            if (inputWord === currentWord) {
-                console.log("ganaste")
 
-                setPoints(+1)
+            const remainWords = words.slice(1)
+
+            setWords(remainWords)
+
+            setPoints((prev) => prev + 1)
+
+            if (remainWords.length > 0) {
+
+                setCurrentWord(remainWords[0])
+                setScrambledWord(scrambleWord(remainWords[0]));
+
+
             } else {
-                setPoints(-1)
+                setIsGameOver(true);
             }
-        } while (points != 3 && points != -3)
+
+            return { remainWords }
+
+        }
+
+        if (inputWord != currentWord) {
+
+            if (errorCounter < 3) {
+
+                setErrorCounter((prev) => prev + 1)
+            }
+            if (errorCounter === 2) {
+                setIsGameOver(true)
+
+            }
+
+            return
+        }
 
 
 
+        if (points === 3) {
+            setIsGameOver(true)
+            return
+        }
 
+
+
+        setGuess('')
         console.log('Intento de adivinanza:', guess, currentWord);
 
     };
@@ -89,10 +121,35 @@ export const ScrambleWords = () => {
         console.log('Palabra saltada');
 
 
+
+
+        if (skipCounter < 3) {
+            setSkipCounter((prev) => prev + 1)
+            const remainWords = words.slice(1)
+
+
+
+            setWords(remainWords)
+
+
+
+            if (remainWords.length > 0) {
+
+                setCurrentWord(remainWords[0])
+                setScrambledWord(scrambleWord(remainWords[0]));
+
+
+            }
+        }
+
+        return
     };
 
     const handlePlayAgain = () => {
         console.log('Jugar de nuevo');
+
+        window.location.reload();
+
 
     };
 
