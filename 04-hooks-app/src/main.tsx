@@ -1,7 +1,9 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import { MemoHook } from './06-memos/MemoHook'
+// import { MemoHook } from './06-memos/MemoHook'
+import { InstagromApp } from './07-useOptimistic/instagromApp'
+import { Toaster } from 'sonner'
 // import { PokemonPage } from './03-examples/PokemonPage'
 // import { FocusScreen } from './04-useRef/FocusScreen'
 // import { TasksApp } from './05-useReducer/taskApp'
@@ -13,6 +15,7 @@ import { TrafficLightWithHook } from './02-useEffect/TrafficLightWithHook' */
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
+    <Toaster />
     {/* <HooksApp /> */}
     {/* <TrafficLight /> */}
     {/* <TrafficLightEffect /> */}
@@ -21,6 +24,8 @@ createRoot(document.getElementById('root')!).render(
     {/* <FocusScreen /> */}
     {/* <TasksApp /> */}
     {/* <ScrambleWords /> */}
-    <MemoHook />
+    {/* <MemoHook /> */}
+    <InstagromApp />
+
   </StrictMode>,
 )
